@@ -62,6 +62,15 @@ function Calculadora() {
     if (digitos[id] !== undefined) {
       setPantalla(pantalla + digitos[id])
     }
+    // Punto decimal, se deshabilita tras usarlo
+    else if (id === 'btnPunto') {
+      if (pantalla.length === 0) {
+        setPantalla(pantalla + '0.')
+      } else {
+        setPantalla(pantalla + '.')
+      }
+      setPuntoDisabled(true)
+    }
   }
 
   return (
