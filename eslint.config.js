@@ -17,5 +17,9 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      semi: ['error', 'never'],
+      'max-len': ['error', { code: 120 }],
+    },
   },
 ])
