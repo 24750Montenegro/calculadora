@@ -9,6 +9,15 @@ const digitos = {
   btnSeis: '6', btnSiete: '7', btnOcho: '8', btnNueve: '9', btnCero: '0',
 }
 
+// Valor maximo permitido en el resultado
+const MAX = 999999999
+
+// Muestra ERROR si el resultado es invalido, negativo o muy grande
+function formatear(valor) {
+  if (Number.isNaN(valor) || valor < 0 || valor > MAX) return 'ERROR'
+  return String(valor).slice(0, 9)
+}
+
 // Estado y logica de la calculadora
 export function useCalculadora() {
   // Valores de la operacion
@@ -86,7 +95,7 @@ export function useCalculadora() {
           result.current = dato1.current / dato2.current
           break
       }
-      setPantalla(String(result.current))
+      setPantalla(formatear(result.current))
       dato1.current = 0
       result.current = 0
       ac.current = 0
@@ -110,28 +119,28 @@ export function useCalculadora() {
       setPuntoDisabled(false)
       dato1.current = parseFloat(pantalla)
       result.current = dato1.current * -1
-      setPantalla(String(result.current))
+      setPantalla(formatear(result.current))
     }
     // Numero al cuadrado
     else if (id === 'btnCuadrado') {
       setPuntoDisabled(false)
       dato1.current = parseFloat(pantalla)
       result.current = dato1.current * dato1.current
-      setPantalla(String(result.current))
+      setPantalla(formatear(result.current))
     }
     // Raiz cuadrada
     else if (id === 'btnRaiz') {
       setPuntoDisabled(false)
       dato1.current = parseFloat(pantalla)
       result.current = Math.sqrt(dato1.current)
-      setPantalla(String(result.current))
+      setPantalla(formatear(result.current))
     }
     // Inverso 1/x
     else if (id === 'btnUnoX') {
       setPuntoDisabled(false)
       dato1.current = parseFloat(pantalla)
       result.current = 1 / dato1.current
-      setPantalla(String(result.current))
+      setPantalla(formatear(result.current))
     }
     // Backspace, borra el ultimo caracter y rehabilita el punto si se quita
     else if (id === 'btnBack') {
@@ -143,7 +152,7 @@ export function useCalculadora() {
     else if (id === 'btnPorcent') {
       setPuntoDisabled(false)
       const valPantalla = parseFloat(pantalla)
-      setPantalla(String(valPantalla / 100))
+      setPantalla(formatear(valPantalla / 100))
     }
   }
 
