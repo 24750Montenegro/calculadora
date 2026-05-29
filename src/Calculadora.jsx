@@ -164,6 +164,13 @@ function Calculadora() {
       result.current = Math.sqrt(dato1.current)
       setPantalla(String(result.current))
     }
+    // Inverso 1/x
+    else if (id === 'btnUnoX') {
+      setPuntoDisabled(false)
+      dato1.current = parseFloat(pantalla)
+      result.current = 1 / dato1.current
+      setPantalla(String(result.current))
+    }
   }
 
   return (
