@@ -71,6 +71,14 @@ function Calculadora() {
       }
       setPuntoDisabled(true)
     }
+    // Suma
+    else if (id === 'btnMas') {
+      dato1.current = parseFloat(pantalla)
+      result.current = dato1.current + result.current
+      setPantalla('')
+      op.current = 1
+      setPuntoDisabled(false)
+    }
   }
 
   return (
