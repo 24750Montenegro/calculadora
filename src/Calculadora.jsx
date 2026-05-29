@@ -1,6 +1,34 @@
 import { useState, useRef } from 'react'
 import './Calculadora.css'
 
+// Botones de la calculadora en orden de la cuadricula
+const botones = [
+  { id: 'btnPorcent', text: '%', clase: 'operador' },
+  { id: 'btnCE', text: 'CE', clase: 'limpiar' },
+  { id: 'btnC', text: 'C', clase: 'limpiar' },
+  { id: 'btnBack', text: '⌫', clase: 'especial' },
+  { id: 'btnUnoX', text: '1/x', clase: 'operador' },
+  { id: 'btnCuadrado', text: 'x²', clase: 'operador' },
+  { id: 'btnRaiz', text: '√', clase: 'operador' },
+  { id: 'btnDivi', text: '/', clase: 'operador' },
+  { id: 'btnSiete', text: '7' },
+  { id: 'btnOcho', text: '8' },
+  { id: 'btnNueve', text: '9' },
+  { id: 'btnPor', text: '*', clase: 'operador' },
+  { id: 'btnCuatro', text: '4' },
+  { id: 'btnCinco', text: '5' },
+  { id: 'btnSeis', text: '6' },
+  { id: 'btnMenos', text: '-', clase: 'operador' },
+  { id: 'btnUno', text: '1' },
+  { id: 'btnDos', text: '2' },
+  { id: 'btnTres', text: '3' },
+  { id: 'btnMas', text: '+', clase: 'operador' },
+  { id: 'btnMasMenos', text: '+/-', clase: 'operador' },
+  { id: 'btnCero', text: '0' },
+  { id: 'btnPunto', text: '.' },
+  { id: 'btnIgual', text: '=', clase: 'especial' },
+]
+
 function Calculadora() {
   // Valores de la operacion
   const dato1 = useRef(0)
@@ -28,6 +56,18 @@ function Calculadora() {
         placeholder="0"
         readOnly
       />
+      <div className="teclado">
+        {botones.map((boton) => (
+          <button
+            key={boton.id}
+            className={boton.clase || ''}
+            disabled={boton.id === 'btnPunto' && puntoDisabled}
+            onClick={() => handleButtonAction(boton.id)}
+          >
+            {boton.text}
+          </button>
+        ))}
+      </div>
       <p className="autor">Juan Francisco Montenegro Aguirre</p>
     </div>
   )
