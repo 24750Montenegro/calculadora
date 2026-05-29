@@ -150,6 +150,13 @@ function Calculadora() {
       result.current = dato1.current * -1
       setPantalla(String(result.current))
     }
+    // Numero al cuadrado
+    else if (id === 'btnCuadrado') {
+      setPuntoDisabled(false)
+      dato1.current = parseFloat(pantalla)
+      result.current = dato1.current * dato1.current
+      setPantalla(String(result.current))
+    }
   }
 
   return (
