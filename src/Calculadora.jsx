@@ -130,6 +130,19 @@ function Calculadora() {
       ac.current = 0
       b.current = 1
     }
+    // CE, limpia solo la pantalla
+    else if (id === 'btnCE') {
+      setPuntoDisabled(false)
+      setPantalla('')
+    }
+    // C, limpia pantalla y reinicia los datos
+    else if (id === 'btnC') {
+      setPantalla('')
+      setPuntoDisabled(false)
+      dato1.current = 0
+      dato2.current = 0
+      result.current = 0
+    }
   }
 
   return (
