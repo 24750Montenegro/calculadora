@@ -79,6 +79,19 @@ function Calculadora() {
       op.current = 1
       setPuntoDisabled(false)
     }
+    // Resta sucesiva, acumula los sustraendos en ac
+    else if (id === 'btnMenos') {
+      dato1.current = parseFloat(pantalla)
+      if (b.current === 1) {
+        result.current = dato1.current
+      } else if (b.current === 0) {
+        ac.current = dato1.current + ac.current
+      }
+      setPantalla('')
+      op.current = 2
+      setPuntoDisabled(false)
+      b.current = 0
+    }
   }
 
   return (
