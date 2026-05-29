@@ -157,6 +157,13 @@ function Calculadora() {
       result.current = dato1.current * dato1.current
       setPantalla(String(result.current))
     }
+    // Raiz cuadrada
+    else if (id === 'btnRaiz') {
+      setPuntoDisabled(false)
+      dato1.current = parseFloat(pantalla)
+      result.current = Math.sqrt(dato1.current)
+      setPantalla(String(result.current))
+    }
   }
 
   return (
