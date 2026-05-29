@@ -106,6 +106,30 @@ function Calculadora() {
       op.current = 4
       setPuntoDisabled(false)
     }
+    // Igual, resuelve segun la operacion pendiente
+    else if (id === 'btnIgual') {
+      dato2.current = parseFloat(pantalla)
+      setPuntoDisabled(true)
+      switch (op.current) {
+        case 1:
+          result.current = result.current + dato2.current
+          break
+        case 2:
+          result.current = result.current - (dato2.current + ac.current)
+          break
+        case 3:
+          result.current = dato1.current * dato2.current
+          break
+        case 4:
+          result.current = dato1.current / dato2.current
+          break
+      }
+      setPantalla(String(result.current))
+      dato1.current = 0
+      result.current = 0
+      ac.current = 0
+      b.current = 1
+    }
   }
 
   return (
