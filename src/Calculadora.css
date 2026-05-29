@@ -1,1 +1,81 @@
 /* Estilos de la calculadora */
+
+.calculadora {
+  width: 293px;
+  background-color: #1f6470;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  font-family: 'Californian FB', 'Book Antiqua', Georgia, serif;
+}
+
+.pantalla {
+  width: 100%;
+  height: 55px;
+  margin-bottom: 14px;
+  padding: 0 10px;
+  text-align: right;
+  font-size: 25px;
+  border: none;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.teclado button {
+  height: 41px;
+  font-size: 22px;
+  font-family: inherit;
+  color: #000000;
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.teclado button:hover {
+  background-color: #d4d4d4;
+}
+
+.teclado button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Operadores en rojo */
+.teclado button.operador {
+  color: #bf0a0a;
+}
+
+/* Limpiar CE y C */
+.teclado button.limpiar {
+  color: #a43d10;
+}
+
+/* Igual y backspace */
+.teclado button.especial {
+  color: #f5efef;
+  background-color: #a43d10;
+}
+
+.teclado button.especial:hover {
+  background-color: #99571d;
+}
+
+.teclado button.especial:active {
+  background-color: #c67c3c;
+}
+
+.autor {
+  margin: 16px 0 0;
+  color: #ffffff;
+  opacity: 0.52;
+  font-size: 15px;
+  text-align: center;
+}
