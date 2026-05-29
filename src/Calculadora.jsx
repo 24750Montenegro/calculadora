@@ -143,6 +143,13 @@ function Calculadora() {
       dato2.current = 0
       result.current = 0
     }
+    // Cambio de signo
+    else if (id === 'btnMasMenos') {
+      setPuntoDisabled(false)
+      dato1.current = parseFloat(pantalla)
+      result.current = dato1.current * -1
+      setPantalla(String(result.current))
+    }
   }
 
   return (
