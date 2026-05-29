@@ -177,6 +177,13 @@ function Calculadora() {
       setPantalla(nueva)
       setPuntoDisabled(nueva.includes('.'))
     }
+    // Porcentaje, divide el valor entre 100
+    else if (id === 'btnPorcent') {
+      setPuntoDisabled(false)
+      const valPantalla = parseFloat(pantalla)
+      const valPorcent = valPantalla / 100
+      setPantalla(String(valPorcent))
+    }
   }
 
   return (
