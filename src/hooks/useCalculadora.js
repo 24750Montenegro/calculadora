@@ -94,6 +94,9 @@ export function useCalculadora() {
         case 4:
           result.current = dato1.current / dato2.current
           break
+        case 5:
+          result.current = dato1.current % dato2.current
+          break
       }
       setPantalla(formatear(result.current))
       dato1.current = 0
@@ -148,11 +151,12 @@ export function useCalculadora() {
       setPantalla(nueva)
       setPuntoDisabled(nueva.includes('.'))
     }
-    // Porcentaje, divide el valor entre 100
+    // Modulo, guarda el operando y registra la operacion pendiente
     else if (id === 'btnPorcent') {
+      dato1.current = parseFloat(pantalla)
+      setPantalla('')
+      op.current = 5
       setPuntoDisabled(false)
-      const valPantalla = parseFloat(pantalla)
-      setPantalla(formatear(valPantalla / 100))
     }
   }
 
