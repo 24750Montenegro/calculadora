@@ -99,6 +99,13 @@ function Calculadora() {
       op.current = 3
       setPuntoDisabled(false)
     }
+    // Division
+    else if (id === 'btnDivi') {
+      dato1.current = parseFloat(pantalla)
+      setPantalla('')
+      op.current = 4
+      setPuntoDisabled(false)
+    }
   }
 
   return (
