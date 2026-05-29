@@ -43,8 +43,25 @@ function Calculadora() {
   // Controla si el punto decimal esta disponible
   const [puntoDisabled, setPuntoDisabled] = useState(false)
 
+  // Digitos asociados a cada boton numerico
+  const digitos = {
+    btnUno: '1',
+    btnDos: '2',
+    btnTres: '3',
+    btnCuatro: '4',
+    btnCinco: '5',
+    btnSeis: '6',
+    btnSiete: '7',
+    btnOcho: '8',
+    btnNueve: '9',
+    btnCero: '0',
+  }
+
   const handleButtonAction = (id) => {
-    // Logica de cada boton
+    // Botones del 0 al 9
+    if (digitos[id] !== undefined) {
+      setPantalla(pantalla + digitos[id])
+    }
   }
 
   return (
