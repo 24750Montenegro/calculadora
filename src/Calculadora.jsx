@@ -92,6 +92,13 @@ function Calculadora() {
       setPuntoDisabled(false)
       b.current = 0
     }
+    // Multiplicacion
+    else if (id === 'btnPor') {
+      dato1.current = parseFloat(pantalla)
+      setPantalla('')
+      op.current = 3
+      setPuntoDisabled(false)
+    }
   }
 
   return (
