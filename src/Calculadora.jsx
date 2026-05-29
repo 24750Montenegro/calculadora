@@ -171,6 +171,12 @@ function Calculadora() {
       result.current = 1 / dato1.current
       setPantalla(String(result.current))
     }
+    // Backspace, borra el ultimo caracter y rehabilita el punto si se quita
+    else if (id === 'btnBack') {
+      const nueva = pantalla.slice(0, -1)
+      setPantalla(nueva)
+      setPuntoDisabled(nueva.includes('.'))
+    }
   }
 
   return (
