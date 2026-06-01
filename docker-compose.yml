@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Ruta base con la que se compila el bundle (debe coincidir con el proxy de nginx)
+        VITE_BASE: ${VITE_BASE:-/}
+    image: calculadora
+    container_name: calculadora
+    restart: unless-stopped
+    ports:
+      # Solo se expone a localhost; nginx del host hace el proxy_pass
+      - "127.0.0.1:${HOST_PORT:-24750}:80"

@@ -14,6 +14,11 @@ storybook-static
 *storybook.log
 *.local
 
+# Env (solo se sube .env.example)
+.env
+.env.*
+!.env.example
+
 # Claude
 .claude
 CLAUDE.md
